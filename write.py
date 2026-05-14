@@ -1,8 +1,8 @@
-from db import conn, c, create_table
+from db import create_table
 
 
 
-def add_note(title, content):
+def add_note(title, content, cursor, connection):
     create_table()
-    c.execute('INSERT INTO notes (title, content) VALUES (?, ?)', (title, content))
-    conn.commit()
+    cursor.execute('INSERT INTO notes (title, content) VALUES (?, ?)', (title, content))
+    connection.commit()

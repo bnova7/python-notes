@@ -3,13 +3,12 @@ from delete import delete_note
 from write import add_note
 from rich.console import Console
 import view 
-
+from db import c, conn
 
 
 
 def main():
     console = Console()
-    console.print("Hello, World!", style="bold green")
     try:
         while True:
             console.print("\nMenu:", style="bold yellow")
@@ -24,7 +23,7 @@ def main():
                 if choice == 1:
                     title = input("Enter note title: ")
                     content = input("Enter note content: ")
-                    add_note(title, content)
+                    add_note(title, content, c, conn)
                     console.print("Note added successfully.", style="bold blue")
                 elif choice == 2:
                     view.display_all_notes()
@@ -35,7 +34,7 @@ def main():
                 elif choice == 4:
                     view.list_note_titles()
                     note_id = int(input("Enter note ID to delete: "))
-                    delete_note(note_id)
+                    delete_note(note_id, c, conn)
                 elif choice == 0:
                     exit(0)
                 else:
