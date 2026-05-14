@@ -2,22 +2,9 @@ import rich
 from delete import delete_note
 from write import add_note
 from rich.console import Console
-from view import get_all_notes, get_note_by_id, list_note_titles
-
-def display_note_by_id(note_id):
-    console = Console()
-    note = get_note_by_id(note_id)
-    if note:
-        console.print(f"ID: {note[0]}, Title: {note[1]}, Content: {note[2]}", style="bold magenta")
-    else:
-        console.print("Note not found.", style="bold red")
+from view import get_all_notes, get_note_by_id, list_note_titles, display_all_notes, display_note_by_id
 
 
-def display_all_notes():
-    console = Console()
-    notes = get_all_notes()
-    for note in notes:
-        console.print(f"ID: {note[0]}, Title: {note[1]}, Content: {note[2]}", style="bold cyan")
 
 def main():
     console = Console()
