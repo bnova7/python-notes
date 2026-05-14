@@ -1,6 +1,6 @@
 
 from db import c 
-from rich import Console 
+from rich.console import Console 
 
 def get_all_notes():
     c.execute('SELECT * FROM notes')

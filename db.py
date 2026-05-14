@@ -1,5 +1,8 @@
 import sqlite3
 
+testconn = sqlite3.connect(":memory:")
+testc=testconn.cursor
+
 conn = sqlite3.connect('notes.db')
 c = conn.cursor()
 
