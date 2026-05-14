@@ -2,7 +2,7 @@ import rich
 from delete import delete_note
 from write import add_note
 from rich.console import Console
-from view import get_all_notes, get_note_by_id
+from view import get_all_notes, get_note_by_id, list_note_titles
 
 def display_note_by_id(note_id):
     console = Console()
@@ -40,9 +40,11 @@ def main():
             elif choice == 2:
                 display_all_notes()
             elif choice == 3:
+                list_note_titles()
                 note_id = int(input("Enter note ID: "))
                 display_note_by_id(note_id)
             elif choice == 4:
+                list_note_titles()
                 note_id = int(input("Enter note ID to delete: "))
                 delete_note(note_id)
             elif choice == 0:
