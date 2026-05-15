@@ -36,6 +36,9 @@ class TestNotes(unittest.TestCase):
     def test_get_note_by_id_is_not_found(self):
         result = get_note_by_id(999, self.c)
         self.assertIsNone(result)
-        
+
+    def test_add_note_with_empty_content(self):
+        result = add_note("title", "", self.c, self.conn)
+        self.assertFalse(result)
 
     

@@ -23,8 +23,10 @@ def main():
                 if choice == 1:
                     title = input("Enter note title: ")
                     content = input("Enter note content: ")
-                    add_note(title, content, c, conn)
-                    console.print("Note added successfully.", style="bold blue")
+                    if add_note(title,content,c,conn):
+                        console.print("Note added successfully.", style="bold blue")
+                    else:
+                        console.print("Cannot add empty note", style="bold red")
                 elif choice == 2:
                     view.display_all_notes()
                 elif choice == 3:
