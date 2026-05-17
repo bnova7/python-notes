@@ -1,5 +1,5 @@
 
-from db import c 
+from notes.db import c
 from rich.console import Console 
 
 def get_all_notes(cursor):

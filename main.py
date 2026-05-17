@@ -1,9 +1,9 @@
 import rich
-from delete import delete_note
-from write import add_note
+from notes.delete import delete_note
+from notes.write import add_note
 from rich.console import Console
-import view 
-from db import c, conn
+import notes.view as view
+from notes.db import c, conn
 
 
 
